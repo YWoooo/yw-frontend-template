@@ -1,12 +1,17 @@
 import axios from 'axios'
-import catApi from './catApi'
-
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $api: typeof $api
   }
 }
 
+const modules = import.meta.globEager('./*.ts')
+const $api = Object.keys(modules).reduce((prev, curr) => {
+  return {
+    ...prev,
+    ...modules[curr].default
+  }
+}, {})
 export const axiosInstance = axios.create({
   // baseURL: import.meta.env.VITE_UCAPI,
   headers: {
@@ -15,9 +20,6 @@ export const axiosInstance = axios.create({
     }
   }
 })
-const $api = {
-  ...catApi
-}
 
 export default {
   // TODO: type app
