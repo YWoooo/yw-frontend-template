@@ -1,5 +1,6 @@
 import axios from 'axios'
 import catApi from './cat.api'
+import { App } from 'vue'
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
@@ -20,8 +21,7 @@ const $api = {
 }
 
 export default {
-  // TODO: type app
-  install: (app: any) => {
+  install: (app: App) => {
     app.config.globalProperties.$api = $api
   }
 }
