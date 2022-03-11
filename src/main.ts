@@ -4,7 +4,7 @@ import { createPinia } from 'pinia'
 import api from './apis/index'
 
 if (import.meta.env.DEV) {
-  const { worker } = await(async () => await import('./mocks/browser'))()
+  const { worker } = await import('./mocks/browser')
   worker.start()
 }
 
