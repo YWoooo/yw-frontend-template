@@ -10,7 +10,9 @@ const store = useMainStore();
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-  {{ store.name }}
+  <span class="text-red-500">
+    {{ store.name }}
+  </span>
 </template>
 
 <style>
