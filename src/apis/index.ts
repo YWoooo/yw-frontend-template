@@ -8,15 +8,8 @@ declare module '@vue/runtime-core' {
   }
 }
 
-export const axiosInstance = axios.create({
-  // baseURL: import.meta.env.VITE_UCAPI,
-  headers: {
-    common: {
-      Accept: 'text/plain, */*'
-    }
-  }
-})
-const $api = {
+export const axiosInstance = axios.create()
+export const $api = {
   ...catApi
 }
 

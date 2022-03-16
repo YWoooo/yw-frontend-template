@@ -1,16 +1,26 @@
 <script setup lang="ts">
-import useGlobalProperties from '@/utils/useGlobalProperties'
+import { ref, onMounted } from 'vue'
+import { $api } from '@/apis/index'
 import { Cat } from '@/types/index'
-defineProps<{ msg: string }>()
 
 const cat = ref(new Cat())
-const { $api } = useGlobalProperties()
 
-onMounted(async () => {
-  cat.value = await $api.cat('595f280a557291a9750ebf62')
+onMounted(() => {
+  getCat()
 })
+
+async function getCat() {
+  try {
+    cat.value = await $api.cat('595f280a557291a9750ebf62')
+  } catch (e) {
+    console.error(e)
+  }
+}
 </script>
 
 <template>
-  {{ cat }}
+  Cat <br>
+  id: {{ cat.id }} <br>
+  created_at: {{ cat.created_at }} <br>
+  tags: {{ cat.tags }}
 </template>

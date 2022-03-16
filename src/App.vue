@@ -1,27 +1,13 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from "./components/HelloWorld/index.vue";
+import HelloWorld from '@/components/HelloWorld/index.vue'
 import useMainStore from "./stores/main.store";
 
 const store = useMainStore();
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-  <span class="text-red-500">
-    {{ store.name }}
-  </span>
+  <div class="p-4">
+    <HelloWorld /> <br>
+    counter: {{ store.counter }}
+  </div>
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
