@@ -10,6 +10,7 @@ module.exports = {
   moduleDirectories: ['src', 'node_modules'],
   moduleNameMapper: {
     '^~/(.*)': '<rootDir>/src/$1',
+    '^@/(.*)': '<rootDir>/src/$1',
   },
   transformIgnorePatterns: ['<"rootDir">/node_modules/@ywchang2404/ui'],
 }
