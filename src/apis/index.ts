@@ -1,6 +1,4 @@
-import axios from 'axios'
 import catApi from './cat.api'
-import { App } from 'vue'
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {

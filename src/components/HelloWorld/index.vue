@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
 import { $api } from '@/apis/index'
 import { Cat } from '@/types/index'
 

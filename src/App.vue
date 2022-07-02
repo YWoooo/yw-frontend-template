@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld/index.vue'
 import useMainStore from "./stores/main.store";
 
 const store = useMainStore();
